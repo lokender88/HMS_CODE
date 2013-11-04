@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="hms"/>
+  <table-filter match-name="oppaymenttrack"/>
+  <table-filter match-name="outpatientregistration"/>
+  <table-filter match-name="ipregistrationdetails"/>
+  <table-filter match-name="opconsultanttransfordetails"/>
+  <table-filter match-name="roomwisebedstatusdetails"/>
+  <table-filter match-name="ipconstranfordetails"/>
+  <table-filter match-name="roomtypelist"/>
+  <table-filter match-name="doctorconsultationpreferences"/>
+  <table-filter match-name="patientregistration"/>
+  <table-filter match-name="iproomtrackdetails"/>
+  <table-filter match-name="doctordetails"/>
+  <table-filter match-name="userdetails"/>
+</hibernate-reverse-engineering>

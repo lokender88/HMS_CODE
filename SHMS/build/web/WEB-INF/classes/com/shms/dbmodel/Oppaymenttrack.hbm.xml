@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 30, 2013 8:55:15 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.shms.dbmodel.Oppaymenttrack" table="oppaymenttrack" catalog="hms">
+        <id name="idOppaymentTrack" type="long">
+            <column name="idOPPaymentTrack" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="patientregistration" class="com.shms.dbmodel.Patientregistration" fetch="select">
+            <column name="OPPaymentTrackPatientRegistrationId" length="100" />
+        </many-to-one>
+        <many-to-one name="outpatientregistration" class="com.shms.dbmodel.Outpatientregistration" fetch="select">
+            <column name="OPPaymentTrackOPRegistrationId" length="100" />
+        </many-to-one>
+        <many-to-one name="userdetails" class="com.shms.dbmodel.Userdetails" fetch="select">
+            <column name="OPPaymentTrackUserId" length="100" />
+        </many-to-one>
+        <property name="oppaymentTrackPaymentType" type="string">
+            <column name="OPPaymentTrackPaymentType" length="100" />
+        </property>
+        <property name="oppaymentTrackCreditType" type="string">
+            <column name="OPPaymentTrackCreditType" length="100" />
+        </property>
+        <property name="oppaymentTrackAmmount" type="java.lang.Double">
+            <column name="OPPaymentTrackAmmount" precision="22" scale="0" />
+        </property>
+        <property name="oppaymentTrackDiscount" type="java.lang.Double">
+            <column name="OPPaymentTrackDiscount" precision="22" scale="0" />
+        </property>
+        <property name="oppaymentTrackDiscountReason" type="string">
+            <column name="OPPaymentTrackDiscountReason" length="250" />
+        </property>
+        <property name="oppaymentTrackPaidAmmount" type="java.lang.Double">
+            <column name="OPPaymentTrackPaidAmmount" precision="22" scale="0" />
+        </property>
+        <property name="oppaymentTrackPaymentStatus" type="string">
+            <column name="OPPaymentTrackPaymentStatus" length="100" />
+        </property>
+        <property name="oppaymentTrackPaidDateAndTime" type="timestamp">
+            <column name="OPPaymentTrackPaidDateAndTime" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

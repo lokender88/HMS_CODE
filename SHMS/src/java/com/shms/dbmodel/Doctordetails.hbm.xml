@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 30, 2013 8:55:15 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.shms.dbmodel.Doctordetails" table="doctordetails" catalog="hms">
+        <id name="idDoctorDetails" type="string">
+            <column name="idDoctorDetails" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="doctorDetailsFirstName" type="string">
+            <column name="DoctorDetailsFirstName" length="100" />
+        </property>
+        <property name="doctorDetailsLastName" type="string">
+            <column name="DoctorDetailsLastName" length="100" />
+        </property>
+        <property name="doctorDetailsAge" type="java.lang.Integer">
+            <column name="DoctorDetailsAge" />
+        </property>
+        <property name="doctorDetailsSex" type="string">
+            <column name="DoctorDetailsSex" length="10" />
+        </property>
+        <property name="doctorDetailsContactNumber" type="java.lang.Long">
+            <column name="DoctorDetailsContactNumber" />
+        </property>
+        <property name="doctorDetailsDateOfJoining" type="timestamp">
+            <column name="DoctorDetailsDateOfJoining" length="19" />
+        </property>
+        <property name="doctorDetailsDesignation" type="string">
+            <column name="DoctorDetailsDesignation" length="100" />
+        </property>
+        <property name="doctorDetailsQualification" type="string">
+            <column name="DoctorDetailsQualification" length="100" />
+        </property>
+        <property name="doctorDetailsSpecialization" type="string">
+            <column name="DoctorDetailsSpecialization" length="100" />
+        </property>
+        <property name="doctorDetailsOpconsultationCharges" type="java.lang.Double">
+            <column name="DoctorDetailsOPConsultationCharges" precision="22" scale="0" />
+        </property>
+        <property name="doctorDetailsPassword" type="string">
+            <column name="DoctorDetailsPassword" length="100" />
+        </property>
+        <property name="doctorDetailsAddress" type="string">
+            <column name="DoctorDetailsAddress" length="45" />
+        </property>
+        <property name="doctorDetailsMaxVisits" type="java.lang.Integer">
+            <column name="DoctorDetailsMaxVisits" />
+        </property>
+        <property name="doctorDetailsNoOfDaysValid" type="java.lang.Integer">
+            <column name="DoctorDetailsNoOfDaysValid" />
+        </property>
+        <set name="opconsultanttransfordetailsesForOpconsultantTransforDetailsPrevConsultantId" inverse="true">
+            <key>
+                <column name="OPConsultantTransforDetailsPrevConsultantId" length="100" />
+            </key>
+            <one-to-many class="com.shms.dbmodel.Opconsultanttransfordetails" />
+        </set>
+        <set name="ipconstranfordetailsesForIpconsTranforDetailsPrevConsultantId" inverse="true">
+            <key>
+                <column name="IPConsTranforDetailsPrevConsultantId" length="100" />
+            </key>
+            <one-to-many class="com.shms.dbmodel.Ipconstranfordetails" />
+        </set>
+        <set name="outpatientregistrations" inverse="true">
+            <key>
+                <column name="OutPatientRegistrationConsultDoctor" length="100" />
+            </key>
+            <one-to-many class="com.shms.dbmodel.Outpatientregistration" />
+        </set>
+        <set name="ipconstranfordetailsesForIpconsTranforDetailsNewConsultantId" inverse="true">
+            <key>
+                <column name="IPConsTranforDetailsNewConsultantId" length="100" />
+            </key>
+            <one-to-many class="com.shms.dbmodel.Ipconstranfordetails" />
+        </set>
+        <set name="doctorconsultationpreferenceses" inverse="true">
+            <key>
+                <column name="DoctorConsultationPreferencesDoctorId" length="100" />
+            </key>
+            <one-to-many class="com.shms.dbmodel.Doctorconsultationpreferences" />
+        </set>
+        <set name="ipregistrationdetailses" inverse="true">
+            <key>
+                <column name="IPRegistrationDetailsConsultantDoctorId" length="100" />
+            </key>
+            <one-to-many class="com.shms.dbmodel.Ipregistrationdetails" />
+        </set>
+        <set name="opconsultanttransfordetailsesForOpconsultantTransforDetailsNewConultantId" inverse="true">
+            <key>
+                <column name="OPConsultantTransforDetailsNewConultantId" length="100" />
+            </key>
+            <one-to-many class="com.shms.dbmodel.Opconsultanttransfordetails" />
+        </set>
+    </class>
+</hibernate-mapping>
