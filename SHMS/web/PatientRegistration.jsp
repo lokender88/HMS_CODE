@@ -3,63 +3,7 @@
     Created on : Jul 10, 2013, 10:33:16 AM
     Author     : Lokendar Reddy Pullagurla
 --%>
-<link href="Styles/autocomplete.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-   
-.nav a {
-	margin-left: 10px;
-        margin-top: -5px;
-	padding: 3px 20px;
-	outline: none;
-	border: 1px solid #121212;
-	border-right: none;
-	background: -moz-linear-gradient(center top, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.34) 100%) repeat scroll 0 0 transparent;
-	box-shadow: 0 2px 3px rgba(255, 255, 255, 0.05) inset, 0 1px 0 rgba(255, 255, 255, 0.1);
-	color: #777777;
-	vertical-align: top;
-	text-decoration: none;
-	text-shadow: 0 -1px #0F0F0F;
-	font-size: 13px;
-	line-height: 21px;
-	cursor: pointer;
-    -webkit-transition: all .6s ease;
-	-moz-transition: all .6s ease;
-	-ms-transition: all .6s ease;
-	-o-transition: all .6s ease;
-	transition: all .6s ease;
-	-webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-}
-.nav a:hover {
-	color:#f6f6f6;
-}
-.nav a:first-child {
-	border-radius: 6px 0 0 6px;
-}
-.nav a:last-child {
-	border-radius: 0 6px 6px 0;
-}
-.nav a:active {
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-.nav a.highlight {
-	background: -moz-linear-gradient(center top, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.44) 100%) repeat scroll 0 0 transparent;
-	color: #f6f6f6;
-}
-
-.nav a:last-child {
-	border-right: 1px solid #121212;
-}
-</style>
-
-<script type="text/javascript" src="Scripts/jquery-1.4.2.min.js"></script>
-<script src="Scripts/jquery.autocomplete.js"></script>
-
+<%@include file="Header.jsp"%>
 <script type="text/javascript">
     function selectReg(){
         document.getElementById('registrationform').style.display='block';
@@ -111,11 +55,12 @@
         xmlhttp.send();
         }
         
-                
+
+//JQuery Auto Suggestion related code
+	jQuery(function(){
+		$("#patientfirstname1").autocomplete("PatientEnquiryAutoComplete.jsp");
+	});
 </script>
-
-
-<%@include file="Header.jsp"%>
 <body onload="selectReg()">
 <div id="content">
     <div id="colOneAll" style="border: 1px solid #95BA2E">
@@ -166,9 +111,9 @@
             <table border="0">
                 <tr>
                     <td class="td_labelName">First Name</td><td>&nbsp;:&nbsp;</td><td class="td_formfield"><input type="text" name="patientfirstname1" id="patientfirstname1"/></td>
-                    <td class="td_labelName">Last Name</td><td>&nbsp;:&nbsp;</td><td class="td_formfield"><input type="text" name="patientlastname" id="patientlastname1"/></td>
-                    <td class="td_labelName">Age</td><td>&nbsp;:&nbsp;</td><td class="td_formfield"><input type="text" name="patientage" id="patientage1"/></td>
-                    <td class="td_labelName">City/Town</td><td>&nbsp;:&nbsp;</td><td class="td_formfield"><input type="text" name="patientcitytown" id="patientcitytown1"/></td>
+                    <td class="td_labelName">Last Name</td><td>&nbsp;:&nbsp;</td><td class="td_formfield"><input type="text" name="patientlastname1" id="patientlastname1"/></td>
+                    <td class="td_labelName">Age</td><td>&nbsp;:&nbsp;</td><td class="td_formfield"><input type="text" name="patientage1" id="patientage1"/></td>
+                    <td class="td_labelName">City/Town</td><td>&nbsp;:&nbsp;</td><td class="td_formfield"><input type="text" name="patientcitytown1" id="patientcitytown1"/></td>
                 </tr>
                 <tr>
                     <td class="td_labelName">Patient Id</td><td>&nbsp;:&nbsp;</td><td class="td_formfield"><input type="text" name="patientid1" id="patientid1"/></td>
@@ -182,19 +127,7 @@
                 
             </table>
         </div>
-        
-<script type="text/javascript">
-var options, a;
-jQuery(function(){
-options = { serviceUrl:'PatientEnquiryAutoComplete.jsp' };
-a = $('#patientfirstname1').autocomplete(options);
-});
-/*$( "#query" ).autocomplete({
-source: "list.jsp",
-minLength: 1
-});
-*/
-</script>
+
 
         <table id="patientpreviousdetailstable" width="100%">
             <tr><td colspan="3" style="background-color: #111;color: #95BA2E"><b>Patient Enquiry Details</b></td></tr>
