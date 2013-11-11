@@ -59,6 +59,9 @@
 //JQuery Auto Suggestion related code
 	jQuery(function(){
 		$("#patientfirstname1").autocomplete("PatientEnquiryAutoComplete.jsp");
+		$("#patientfirstname1").focusout(function(){
+                    alert("u can write ajax call to reload patient details list");
+                });
 	});
 </script>
 <body onload="selectReg()">

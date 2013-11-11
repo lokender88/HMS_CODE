@@ -9,7 +9,8 @@
         <meta name="description" content="" />
         <link href="Styles/stylesheet.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="Scripts/scripts.js"></script>
-        <script type="text/javascript" src="Scripts/DatePicker.js"></script>
+        <script type="text/javascript" src="Scripts/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="Scripts/jquery.autocomplete.js"></script>
     </head>
 
     <body>
